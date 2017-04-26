@@ -4,11 +4,21 @@ public class Data {
     private String header;
     private int drawable;
     private int category;
+    private int color;
 
-    public Data(String header, int drawable, int category) {
+    public Data(String header, int drawable, int category, int color) {
         this.header = header;
         this.drawable = drawable;
         this.category = category;
+        this.color = color;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
     }
 
     public String getHeader() {

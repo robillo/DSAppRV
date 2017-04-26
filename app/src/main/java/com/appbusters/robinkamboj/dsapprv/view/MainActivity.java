@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         staggeredGridLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
-        gridLayoutManager = new GridLayoutManager(getApplicationContext(), 4);
-        recyclerView.setLayoutManager(staggeredGridLayoutManager);
+        gridLayoutManager = new GridLayoutManager(getApplicationContext(), 3);
+        recyclerView.setLayoutManager(gridLayoutManager);
 
         data = fillWithData();
         adapter = new RecyclerViewAdapter(getApplicationContext(), data);
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Data> fillWithData(){
         List<Data> data = new ArrayList<>();
         for(int i = 0; i < allInterests.length; i++){
-            data.add(new Data(allInterests[i], allDrawables[i], i+1));
+            data.add(new Data(allInterests[i], allDrawables[i], i+1, allColors[i]));
             Log.e("Interest and Dr:", allInterests[i]+allDrawables[i]);
         }
         return data;
