@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.appbusters.robinkamboj.dsapprv.R;
 import com.appbusters.robinkamboj.dsapprv.model.Data;
@@ -34,6 +36,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
 
     @Override
     public void onBindViewHolder(View_Holder holder, int position) {
+        final Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim);
+        holder.itemView.setAnimation(animation);
         Glide.with(context)
                 .load(list.get(position).getDrawable())
                 .into(holder.drawable);
