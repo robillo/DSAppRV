@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.appbusters.robinkamboj.dsapprv.R;
 import com.appbusters.robinkamboj.dsapprv.controller.RecyclerViewAdapter;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         astrology = getResources().getStringArray(R.array.astrology_array);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-        gridLayoutManager = new GridLayoutManager(getApplicationContext(), 3);
+        gridLayoutManager = new GridLayoutManager(getApplicationContext(), 4);
         recyclerView.setLayoutManager(gridLayoutManager);
 
         data = fillWithData();
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         List<Data> data = new ArrayList<>();
         for(int i = 0; i < allInterests.length; i++){
             data.add(new Data(allInterests[i], allDrawables[i], i+1));
+            Log.e("Interest and Dr:", allInterests[i]+allDrawables[i]);
         }
         return data;
     }
