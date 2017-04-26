@@ -13,12 +13,14 @@ import com.bumptech.glide.Glide;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
 
     private Context context;
     private int[] drawables;
     private List<Data> list = Collections.emptyList();
+    private Random mRandom = new Random();
 
     public RecyclerViewAdapter(Context context, List<Data> list ) {
         this.context = context;
@@ -36,7 +38,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
         Glide.with(context)
                 .load(list.get(position).getDrawable())
                 .into(holder.drawable);
+        holder.cardView.getLayoutParams().height = getRandomIntInRange(200, 400);
         holder.header.setText(list.get(position).getHeader());
+    }
+
+    // Custom method to get a random number between a range
+    protected int getRandomIntInRange(int max, int min){
+        return mRandom.nextInt((max-min)+min)+min;
     }
 
     @Override

@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 
 import com.appbusters.robinkamboj.dsapprv.R;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private int[] allColors, allDrawables;
     private RecyclerView recyclerView;
     private GridLayoutManager gridLayoutManager;
+    private StaggeredGridLayoutManager staggeredGridLayoutManager;
     private List<Data> data;
     private RecyclerViewAdapter adapter;
 
@@ -39,8 +41,9 @@ public class MainActivity extends AppCompatActivity {
         astrology = getResources().getStringArray(R.array.astrology_array);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        staggeredGridLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
         gridLayoutManager = new GridLayoutManager(getApplicationContext(), 4);
-        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.setLayoutManager(staggeredGridLayoutManager);
 
         data = fillWithData();
         adapter = new RecyclerViewAdapter(getApplicationContext(), data);
