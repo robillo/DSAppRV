@@ -10,9 +10,9 @@ import com.appbusters.robinkamboj.dsapprv.R;
 
 public class View_Holder extends RecyclerView.ViewHolder{
 
-    private CardView cardView;
-    private ImageView drawable;
-    private TextView header;
+    public CardView cardView;
+    public ImageView drawable;
+    public TextView header;
 
     public View_Holder(View itemView) {
         super(itemView);
