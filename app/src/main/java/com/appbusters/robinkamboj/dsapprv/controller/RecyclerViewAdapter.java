@@ -38,7 +38,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
         Glide.with(context)
                 .load(list.get(position).getDrawable())
                 .into(holder.drawable);
-        holder.cardView.getLayoutParams().height = getRandomIntInRange(200, 400);
+        holder.cardView.getLayoutParams().height = getRandomIntInRange(250, 350);
         holder.header.setText(list.get(position).getHeader());
     }
 

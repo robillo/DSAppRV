@@ -16,13 +16,14 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="50sp"
+            android:layout_height="60sp"
             android:id="@+id/frameLayout">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/imageView"
+                android:background="@color/colorPrimaryDark"
                 android:padding="10sp"/>
 
             <!--<ImageView-->
@@ -39,6 +40,7 @@
             android:gravity="center"
             android:padding="4sp"
             android:text="LIGHT"
+            android:textAlignment="center"
             android:fontFamily="sans-serif-smallcaps"
             android:textColor="#000000" />
 
