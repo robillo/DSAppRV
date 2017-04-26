@@ -25,10 +25,10 @@
                 android:id="@+id/imageView"
                 android:padding="10sp"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/imageview_disabled"/>
+            <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:id="@+id/imageview_disabled"/>-->
 
         </FrameLayout>
 
