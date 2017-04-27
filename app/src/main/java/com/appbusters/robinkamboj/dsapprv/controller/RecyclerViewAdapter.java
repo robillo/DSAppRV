@@ -19,6 +19,7 @@ import com.willowtreeapps.spruce.Spruce;
 import com.willowtreeapps.spruce.animation.DefaultAnimations;
 import com.willowtreeapps.spruce.sort.LinearSort;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -27,7 +28,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
 
     private Context context;
     private List<Data> list = Collections.emptyList();
-    private Random mRandom = new Random();
+    private ArrayList<String> mSelectedItems = new ArrayList<>();
 
     public RecyclerViewAdapter(Context context, List<Data> list ) {
         this.context = context;
@@ -42,27 +43,35 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
 
     @Override
     public void onBindViewHolder(final View_Holder holder, int position) {
-//        animateView(holder.cardView);
+        animateView(holder.cardView);
         Glide.with(context)
                 .load(list.get(position).getDrawable())
                 .into(holder.drawable);
         holder.header.setText(list.get(position).getHeader());
         holder.drawable.setBackgroundColor(list.get(position).getColor());
+        if(mSelectedItems.contains(holder.header.getText().toString())){
+            Glide.with(context)
+                    .load(R.drawable.ic_check_circle_white_24dp)
+                    .into(holder.drawable);
+            holder.drawable.setBackgroundColor(context.getResources().getColor(R.color.colorHighlight));
+        }
         holder.setClickListener(new ItemClickListener() {
             @Override
             public void onCLick(View v, int position, Boolean isLongClick) {
                 if(!isLongClick){
-                    if(!list.get(position).getSelected()){
+                    if(!mSelectedItems.contains(holder.header.getText().toString()) && !list.get(position).getSelected()){
+                        mSelectedItems.add(holder.header.getText().toString());
                         Glide.with(context)
                                 .load(R.drawable.ic_check_circle_white_24dp)
                                 .into(holder.drawable);
-                        list.get(position).setSelected(Boolean.TRUE);
+                        holder.drawable.setBackgroundColor(context.getResources().getColor(R.color.colorHighlight));
                     }
                     else {
+                        mSelectedItems.remove(holder.header.getText().toString());
                         Glide.with(context)
                                 .load(list.get(position).getDrawable())
                                 .into(holder.drawable);
-                        list.get(position).setSelected(Boolean.FALSE);
+                        holder.drawable.setBackgroundColor(list.get(position).getColor());
                     }
                 }
             }
