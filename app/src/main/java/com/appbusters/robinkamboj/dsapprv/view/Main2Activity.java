@@ -53,13 +53,13 @@ public class Main2Activity extends AppCompatActivity {
     private List<Data> fillWithData(){
         List<Data> data = new ArrayList<>();
         for(int i = 0; i < diet.length; i++){
-            data.add(new Data(diet[i], allDrawables[0], i+1, allColors[5]));
+            data.add(new Data(diet[i], allDrawables[0], i+1, allColors[5], false));
         }
         for(int i = 0; i < health.length; i++){
-            data.add(new Data(health[i], allDrawables[2], i+1, allColors[6]));
+            data.add(new Data(health[i], allDrawables[2], i+1, allColors[6], false));
         }
         for(int i = 0; i < yoga.length; i++){
-            data.add(new Data(yoga[i], allDrawables[1], i+1, allColors[2]));
+            data.add(new Data(yoga[i], allDrawables[1], i+1, allColors[2], false));
         }
         return data;
     }
