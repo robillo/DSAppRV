@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/imageView"
-                android:layout_margin="5sp"
+                android:layout_margin="2sp"
                 android:background="@color/colorPrimaryDark"
                 android:padding="10sp"/>
 
@@ -36,7 +36,7 @@
 
         </FrameLayout>
 
-        <TextView
+        <CheckedTextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

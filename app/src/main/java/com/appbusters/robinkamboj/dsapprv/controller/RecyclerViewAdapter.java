@@ -36,8 +36,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
 
     @Override
     public void onBindViewHolder(View_Holder holder, int position) {
-        final Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim);
-        holder.itemView.setAnimation(animation);
+//        final Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim);
+//        holder.itemView.setAnimation(animation);
         Glide.with(context)
                 .load(list.get(position).getDrawable())
                 .into(holder.drawable);
