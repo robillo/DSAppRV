@@ -5,12 +5,22 @@ public class Data {
     private int drawable;
     private int category;
     private int color;
+    private Boolean isSelected;
 
-    public Data(String header, int drawable, int category, int color) {
+    public Data(String header, int drawable, int category, int color, Boolean isSelected) {
         this.header = header;
         this.drawable = drawable;
         this.category = category;
         this.color = color;
+        this.isSelected = isSelected;
+    }
+
+    public Boolean getSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(Boolean selected) {
+        isSelected = selected;
     }
 
     public int getColor() {
