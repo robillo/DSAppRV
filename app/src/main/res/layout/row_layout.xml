@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_margin="4sp"
+    app:cardElevation="4sp"
     android:id="@+id/cardView"
     android:clickable="false">
 
@@ -15,28 +16,17 @@
         android:id="@+id/ll"
         android:background="@drawable/card_background">
 
-        <FrameLayout
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="60sp"
             android:clickable="false"
-            android:id="@+id/frameLayout">
+            android:layout_margin="2sp"
+            android:padding="10sp"
+            android:id="@+id/imageView">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/imageView"
-                android:layout_margin="2sp"
-                android:background="@color/colorPrimaryDark"
-                android:padding="10sp"/>
+        </ImageView>
 
-            <!--<ImageView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:id="@+id/imageview_disabled"/>-->
-
-        </FrameLayout>
-
-        <CheckedTextView
+        <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
