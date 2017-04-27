@@ -7,14 +7,14 @@
     android:layout_margin="4sp"
     app:cardElevation="4sp"
     android:id="@+id/cardView"
+    app:cardBackgroundColor="@color/white"
     android:clickable="false">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100sp"
         android:orientation="vertical"
-        android:id="@+id/ll"
-        android:background="@drawable/card_background">
+        android:id="@+id/ll">
 
         <ImageView
             android:layout_width="match_parent"

@@ -2,6 +2,7 @@ package com.appbusters.robinkamboj.dsapprv.controller;
 
 import android.animation.Animator;
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,7 +44,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
     public void onBindViewHolder(View_Holder holder, int position) {
 //        final Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim);
 //        holder.itemView.setAnimation(animation);
-        animateView(holder.ll);
+        animateView(holder.cardView);
         Glide.with(context)
                 .load(list.get(position).getDrawable())
                 .into(holder.drawable);
@@ -52,7 +53,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
         holder.drawable.setBackgroundColor(list.get(position).getColor());
     }
 
-    private void animateView(LinearLayout linearLayout) {
+    private void animateView(CardView linearLayout) {
 
         Animator[] animators = new Animator[]{
                 DefaultAnimations.shrinkAnimator(linearLayout, 800L),
