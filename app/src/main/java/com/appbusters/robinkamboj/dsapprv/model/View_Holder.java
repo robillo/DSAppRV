@@ -13,7 +13,7 @@ import com.appbusters.robinkamboj.dsapprv.controller.ItemClickListener;
 public class View_Holder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
     public CardView cardView;
-    public ImageView drawable;
+    public ImageView drawable, bg;
     public TextView header;
     public LinearLayout ll;
     private ItemClickListener clickListener;
@@ -23,6 +23,7 @@ public class View_Holder extends RecyclerView.ViewHolder implements View.OnClick
         cardView = (CardView) itemView.findViewById(R.id.cardView);
         drawable = (ImageView) itemView.findViewById(R.id.imageView);
         header = (TextView) itemView.findViewById(R.id.textView);
+        bg = (ImageView) itemView.findViewById(R.id.imageView2);
         ll = (LinearLayout) itemView.findViewById(R.id.ll);
 
         itemView.setOnClickListener(this);

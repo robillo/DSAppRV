@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Data> fillWithData(){
         List<Data> data = new ArrayList<>();
         for(int i = 0; i < allInterests.length; i++){
-            data.add(new Data(allInterests[i], allDrawables[i], i+1, allColors[i]));
+            data.add(new Data(allInterests[i], allDrawables[i], i+1, allColors[i], Boolean.FALSE));
             Log.e("Interest and Dr:", allInterests[i]+allDrawables[i]);
         }
         return data;

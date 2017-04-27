@@ -16,15 +16,28 @@
         android:orientation="vertical"
         android:id="@+id/ll">
 
-        <ImageView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="60sp"
-            android:clickable="false"
-            android:layout_margin="2sp"
-            android:padding="10sp"
-            android:id="@+id/imageView">
+            android:layout_margin="2sp">
 
-        </ImageView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                android:padding="10sp"
+                android:id="@+id/imageView">
+            </ImageView>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                android:padding="10sp"
+                android:id="@+id/imageView2">
+            </ImageView>
+
+        </FrameLayout>
 
         <TextView
             android:id="@+id/textView"

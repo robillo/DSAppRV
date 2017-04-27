@@ -41,7 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
     }
 
     @Override
-    public void onBindViewHolder(View_Holder holder, int position) {
+    public void onBindViewHolder(final View_Holder holder, int position) {
 //        final Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim);
 //        holder.itemView.setAnimation(animation);
         animateView(holder.cardView);
@@ -55,7 +55,24 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
             @Override
             public void onCLick(View v, int position, Boolean isLongClick) {
                 if(!isLongClick){
-
+                    if(!list.get(position).getSelected()){
+//                        holder.header.setTextColor(context.getResources().getColor(R.color.white));
+//                        holder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.colorHighlight));
+//                        Glide.with(context)
+//                                .load(R.color.colorHighlight)
+//                                .into(holder.bg);
+                        holder.drawable.setBackgroundColor(context.getResources().getColor(R.color.colorHighlight));
+                        list.get(position).setSelected(Boolean.TRUE);
+                    }
+                    else {
+//                        holder.header.setTextColor(context.getResources().getColor(R.color.black));
+                        Glide.with(context)
+                                .load(list.get(position).getColor())
+                                .into(holder.bg);
+//                        holder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.white));
+                        holder.drawable.setBackgroundColor(list.get(position).getColor());
+                        list.get(position).setSelected(Boolean.FALSE);
+                    }
                 }
             }
         });
