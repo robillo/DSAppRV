@@ -42,13 +42,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
 
     @Override
     public void onBindViewHolder(final View_Holder holder, int position) {
-//        final Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim);
-//        holder.itemView.setAnimation(animation);
-        animateView(holder.cardView);
+//        animateView(holder.cardView);
         Glide.with(context)
                 .load(list.get(position).getDrawable())
                 .into(holder.drawable);
-//        holder.cardView.getLayoutParams().height = getRandomIntInRange(250, 350);
         holder.header.setText(list.get(position).getHeader());
         holder.drawable.setBackgroundColor(list.get(position).getColor());
         holder.setClickListener(new ItemClickListener() {
@@ -56,21 +53,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
             public void onCLick(View v, int position, Boolean isLongClick) {
                 if(!isLongClick){
                     if(!list.get(position).getSelected()){
-//                        holder.header.setTextColor(context.getResources().getColor(R.color.white));
-//                        holder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.colorHighlight));
-//                        Glide.with(context)
-//                                .load(R.color.colorHighlight)
-//                                .into(holder.bg);
-                        holder.drawable.setBackgroundColor(context.getResources().getColor(R.color.colorHighlight));
+                        Glide.with(context)
+                                .load(R.drawable.ic_check_circle_white_24dp)
+                                .into(holder.drawable);
                         list.get(position).setSelected(Boolean.TRUE);
                     }
                     else {
-//                        holder.header.setTextColor(context.getResources().getColor(R.color.black));
                         Glide.with(context)
-                                .load(list.get(position).getColor())
-                                .into(holder.bg);
-//                        holder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.white));
-                        holder.drawable.setBackgroundColor(list.get(position).getColor());
+                                .load(list.get(position).getDrawable())
+                                .into(holder.drawable);
                         list.get(position).setSelected(Boolean.FALSE);
                     }
                 }
