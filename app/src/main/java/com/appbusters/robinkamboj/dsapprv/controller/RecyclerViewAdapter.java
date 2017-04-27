@@ -51,6 +51,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
 //        holder.cardView.getLayoutParams().height = getRandomIntInRange(250, 350);
         holder.header.setText(list.get(position).getHeader());
         holder.drawable.setBackgroundColor(list.get(position).getColor());
+        holder.setClickListener(new ItemClickListener() {
+            @Override
+            public void onCLick(View v, int position, Boolean isLongClick) {
+                if(!isLongClick){
+
+                }
+            }
+        });
     }
 
     private void animateView(CardView linearLayout) {

@@ -8,13 +8,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.appbusters.robinkamboj.dsapprv.R;
+import com.appbusters.robinkamboj.dsapprv.controller.ItemClickListener;
 
-public class View_Holder extends RecyclerView.ViewHolder{
+public class View_Holder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
     public CardView cardView;
     public ImageView drawable;
     public TextView header;
     public LinearLayout ll;
+    private ItemClickListener clickListener;
 
     public View_Holder(View itemView) {
         super(itemView);
@@ -22,5 +24,16 @@ public class View_Holder extends RecyclerView.ViewHolder{
         drawable = (ImageView) itemView.findViewById(R.id.imageView);
         header = (TextView) itemView.findViewById(R.id.textView);
         ll = (LinearLayout) itemView.findViewById(R.id.ll);
+
+        itemView.setOnClickListener(this);
+    }
+
+    public void setClickListener(ItemClickListener clickListener){
+        this.clickListener = clickListener;
+    }
+
+    @Override
+    public void onClick(View view) {
+        clickListener.onCLick(view, getAdapterPosition(), Boolean.FALSE);
     }
 }
